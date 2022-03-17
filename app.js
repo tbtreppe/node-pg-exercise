@@ -4,13 +4,12 @@ const express = require("express");
 
 const ExpressError = require("./expressError");
 
-app.use(express.json());
-
 const cRoutes = require("./routes/companies");
 const iRoutes = require("./routes/invoices");
 
 const app = express();
 
+app.use(express.json());
 app.use("/companies", cRoutes);
 app.use("/invoices", iRoutes);
 
